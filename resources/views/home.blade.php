@@ -32,5 +32,13 @@
             <button class="btn btn-sm btn-primary">Upload Image</button>
         </div>
     </form>
+
+    <div class="photo">
+        @foreach (App\Models\Photo::all() as $photo)
+            <div>
+                <img src="/storage/{{ $photo->photo }}" class="w-100" alt="photo">
+            </div>
+        @endforeach
+    </div>
 </div>
 @endsection

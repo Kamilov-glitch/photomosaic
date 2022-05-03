@@ -10,14 +10,14 @@ class PhotoController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'image' => 'required | image',
+            'photo' => 'required | image',
         ]);
 
-        $imagePath = request('image')->store('uploads', 'public');
+        $photoPath = request('photo')->store('uploads', 'public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-        $image->save();
+        $photo = Image::make(public_path("storage/{$photoPath}"))->fit(1200, 1200);
+        $photo->save();
 
-        return view("home", compact('image'));
+        return view("home");
     }
 }
