@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Intervention\Image\Facades\Image;
+// use Intervention\Image\Facades\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,10 @@ use Intervention\Image\Facades\Image;
 */
 
 Route::get('/', function() {
-    $img = Image::make('foo.jpeg')->resize(300, 200);
+    $img = Image::make('foo.jpeg')->resize(1000, 1000);
     return $img->response('jpg');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
