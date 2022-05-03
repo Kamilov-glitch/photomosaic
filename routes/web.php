@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 // use Intervention\Image\Facades\Image;
 
@@ -22,3 +23,4 @@ Route::get('/', function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home', [HomeController::class, 'store']);
