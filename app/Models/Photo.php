@@ -9,6 +9,6 @@ class Photo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name, photo'];
+    protected $guarded = [];
 
 }
