@@ -33,10 +33,10 @@
         </div>
     </form>
 
-    <div class="photo">
+    <div class="photo pt-4">
         @foreach (App\Models\Photo::all() as $photo)
             <div>
-                <img src="/storage/{{ $photo->photo }}" class="w-100" alt="photo">
+                <img src="/storage/{{ $photo->photo }}" alt="photo">
             </div>
         @endforeach
     </div>
